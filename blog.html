@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <nav class="sticky top-0 bg-orange-50">
+      <div class="container h-24 flex justify-between items-center sm:text-lg">
+        <ul>
+          <li>
+            <a href="./index.html" class="px-5 py-2 font-bold shadow bg-lime-300 rounded-lg sm:px-7 sm:py-3">Home</a>
+          </li>
+        </ul>
+        <a href="./index.html" class="brands flex gap-2 items-center">
+          <img class="w-8 sm:w-10" src="./assets/logo.png" alt="logo" />
+          <span class="w-min text-center font-bold sm:w-fit">Donate Bangladesh</span>
+        </a>
+        <div class="flex gap-2 items-center">
+          <img class="w-8" src="./assets/coin.png" alt="coin" />
+          <span id="current-balance" class="text-neutral-600 font-medium">0 BDT</span>
+        </div>
+      </div>
+    </nav>
+    <main class="grow my-12 container faq">
+      <details>
+        <summary>What is DOM?</summary>
+        <p>
+          The Document Object Model is a cross-platform and language-independent interface that treats an HTML or XML
+          document as a tree structure wherein each node is an object representing a part of the document.
+        </p>
+      </details>
+      <details>
+        <summary>How do you select an element from the DOM?</summary>
+        <p>
+          The document api has multiple methods for selecting element. Most commonly used are `getElementById`,
+          `querySelector`, `querySelectorAll`. Less commonly used are `getElementsByClassName`, `getElementsByName`,
+          `getElementsByTagName`.
+        </p>
+      </details>
+      <details>
+        <summary>What is event delegation in the context of the DOM and why it should be used?</summary>
+        <p>
+          We often need to listen for the same event in different elements. As we know, events has to go throught
+          capture and bubble phases. In the above case we simply can just use one listener on the parent of those
+          elements and handle the filtering logic there. This is called event delegation. This reduces number of event
+          listeners.
+        </p>
+      </details>
+      <details>
+        <summary>How do you manipulate an element's attributes and styles using the DOM?</summary>
+        <p>
+          The document api gives us mutiple ways of doing this. We have `setAttribute` method for setting attributes(as
+          well as style). For style we can use `style` property. We can also manipulate style by changing element
+          classNames by the `classList` property which gives use `add`, `remove`, `toggle` methods.
+        </p>
+      </details>
+    </main>
+    <footer class="h-24 bg-orange-50"></footer>
+    <script>
+      let activeSummaryIndex = null;
+      const summaries = document.getElementsByTagName("summary");
+
+      [...summaries].forEach((summary, i) => {
+        summary.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (activeSummaryIndex == i) activeSummaryIndex = null;
+          else activeSummaryIndex = i;
+          updateDetailses();
+        });
+      });
+
+      function updateDetailses() {
+        [...summaries].forEach((summary, i) => {
+          if (activeSummaryIndex === i) summary.parentElement.setAttribute("open", true);
+          else summary.parentElement.removeAttribute("open");
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="min-h-screen flex flex-col gap-4">
+    <div id="dialog" hidden>
+      <div class="overlay"></div>
+      <div class="content p-8 flex flex-col items-center gap-4 text-center rounded-lg bg-white">
+        <h3 class="text-4xl font-bold">Congratulations!</h3>
+        <div class="flex justify-center items-center gap-4">
+          <img class="w-10" src="./assets/coin.png" alt="coin" />
+          <span class="text-neutral-600 text-2xl">0 BDT</span>
+        </div>
+        <p class="text-lg">
+          You have Donate for Humankind<br />
+          <span class="pt-2 text-xl font-semibold">Successfully</span>
+        </p>
+        <button class="rounded-xl bg-gray-100">Close</button>
+      </div>
+    </div>
+
+    <nav class="sticky top-0">
+      <div class="bg-orange-50">
+        <div class="container py-8 flex justify-between items-center sm:text-lg">
+          <ul>
+            <li>
+              <a href="./blog.html" class="px-5 py-2 font-bold shadow bg-lime-300 rounded-lg sm:px-7 sm:py-3">Blog</a>
+            </li>
+          </ul>
+          <a href="./index.html" class="brands flex gap-2 items-center">
+            <img class="w-8 sm:w-10" src="./assets/logo.png" alt="logo" />
+            <span class="w-min text-center font-bold sm:w-fit">Donate Bangladesh</span>
+          </a>
+          <div class="flex gap-2 items-center">
+            <img class="w-8" src="./assets/coin.png" alt="coin" />
+            <span id="current-balance" class="text-neutral-600 font-medium">0 BDT</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-buttons" class="py-8 flex justify-center gap-4 backdrop-blur-lg">
+        <button>Donation</button>
+        <button>History</button>
+      </div>
+    </nav>
+
+    <main class="grow container my-8 space-y-6">
+      <div id="tab-contents" class="h-full">
+        <div class="hidden" id="donation-tab">
+          <ul class="space-y-8">
+            <li>
+              <img src="./assets/noakhali.png" alt="noakhali-flood" />
+              <div class="right">
+                <div class="donated-amount">
+                  <img src="./assets/coin.png" alt="coin" />
+                  <span>0 BDT</span>
+                </div>
+                <h2>Donate for Flood Relief at Noakhali, Bangladesh</h2>
+                <p>
+                  The recent floods in Noakhali have caused significant damage to homes, infrastructues, business and
+                  agricultural lands. Your donation will help to provide essential supplies to the affected people.
+                  Every Contribution, big or small, makes difference. Please join us in supporting the relief efforts
+                  and making positive impact on the lives of those in need.
+                </p>
+                <input type="text" placeholder="Donation amount" />
+                <button class="primary">Donate</button>
+              </div>
+            </li>
+            <li>
+              <img src="./assets/feni.png" alt="feni-flood" />
+              <div class="right">
+                <div class="donated-amount">
+                  <img class="w-6" src="./assets/coin.png" alt="coin" />
+                  <span>0 BDT</span>
+                </div>
+                <h2>Donate for Flood Releif at Feni, Bangladesh</h2>
+                <p>
+                  The recent floods in Noakhali have caused significant damage to homes, infrastructues, business and
+                  agricultural lands. Your donation will help to provide essential supplies to the affected people.
+                  Every Contribution, big or small, makes difference. Please join us in supporting the relief efforts
+                  and making positive impact on the lives of those in need.
+                </p>
+                <input type="text" placeholder="Donation amount" />
+                <button class="primary">Donate</button>
+              </div>
+            </li>
+            <li>
+              <img src="./assets/quota-protest.png" alt="noakhali-flood" />
+              <div class="flex flex-col">
+                <div class="donated-amount">
+                  <img class="w-6" src="./assets/coin.png" alt="coin" />
+                  <span>0 BDT</span>
+                </div>
+                <h2>Aid for Injured in Qouta Movement</h2>
+                <p>
+                  The recent floods in Noakhali have caused significant damage to homes, infrastructues, business and
+                  agricultural lands. Your donation will help to provide essential supplies to the affected people.
+                  Every Contribution, big or small, makes difference. Please join us in supporting the relief efforts
+                  and making positive impact on the lives of those in need.
+                </p>
+                <input type="text" placeholder="Donation amount" />
+                <button class="primary">Donate</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="hidden" id="history-tab">
+          <p class="text-center">No donation history.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="h-24 bg-orange-50"></footer>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  button {
+    @apply px-5 py-2 font-bold rounded-lg border-2 border-neutral-300 bg-neutral-50/80 sm:px-7 sm:py-3;
+  }
+
+  button.primary {
+    @apply bg-lime-300 border-none;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-[95%] lg:max-w-5xl;
+  }
+
+  #dialog {
+    @apply fixed inset-0 z-50 flex justify-center items-center;
+  }
+
+  #dialog[hidden] {
+    @apply hidden;
+  }
+
+  #dialog .overlay {
+    @apply absolute inset-0 -z-10 bg-neutral-950/30;
+  }
+
+  #donation-tab li {
+    @apply p-6 flex flex-col gap-8 rounded-2xl border lg:flex-row;
+  }
+
+  #donation-tab img {
+    @apply lg:shrink-0 lg:rounded-lg lg:object-cover lg:w-1/2 lg:max-h-[400px];
+  }
+
+  #donation-tab .right {
+    @apply flex flex-col;
+  }
+
+  #donation-tab .donated-amount {
+    @apply w-max px-3 py-2 flex items-center gap-2 rounded-lg bg-slate-100;
+  }
+
+  #donation-tab .donated-amount img {
+    @apply w-6;
+  }
+
+  #donation-tab .donated-amount span {
+    @apply text-neutral-600 font-medium;
+  }
+
+  #donation-tab h2 {
+    @apply my-4 text-xl font-bold;
+  }
+
+  #donation-tab p {
+    @apply text-zinc-600;
+  }
+
+  #donation-tab input {
+    @apply block my-4 px-4 py-2 border rounded-lg;
+  }
+
+  #history-tab > p {
+    @apply py-4 border-t;
+  }
+
+  #history-tab ul {
+    @apply max-w-[95%] mx-auto space-y-4;
+  }
+
+  #history-tab li {
+    @apply p-4 rounded-lg border;
+  }
+
+  #history-tab h2 {
+    @apply mb-2 text-lg font-bold;
+  }
+
+  #history-tab li p {
+    @apply text-zinc-600 font-light;
+  }
+
+  .faq {
+    @apply space-y-4;
+  }
+
+  .faq details {
+    @apply p-4 shadow rounded-lg;
+  }
+
+  .faq summary {
+    @apply py-2 text-lg font-bold cursor-pointer;
+  }
+
+  .faq p {
+    @apply text-zinc-600;
+  }
+}
