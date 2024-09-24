@@ -14,7 +14,7 @@
         <h3 class="text-4xl font-bold">Congratulations!</h3>
         <div class="flex justify-center items-center gap-4">
           <img class="w-10" src="./assets/coin.png" alt="coin" />
-          <span class="text-neutral-600 text-2xl">0 BDT</span>
+          <span class="text-neutral-600 text-2xl before:text-3xl" data-amount>0</span>
         </div>
         <p class="text-lg">
           You have Donate for Humankind<br />
@@ -32,13 +32,13 @@
               <a href="./blog.html" class="px-5 py-2 font-bold shadow bg-lime-300 rounded-lg sm:px-7 sm:py-3">Blog</a>
             </li>
           </ul>
-          <a href="./index.html" class="brands flex gap-2 items-center">
+          <a href="./index.html" class="brands flex flex-col gap-2 items-center sm:flex-row">
             <img class="w-8 sm:w-10" src="./assets/logo.png" alt="logo" />
             <span class="w-min text-center font-bold sm:w-fit">Donate Bangladesh</span>
           </a>
-          <div class="flex gap-2 items-center">
+          <div class="flex flex-col gap-2 items-center sm:flex-row">
             <img class="w-8" src="./assets/coin.png" alt="coin" />
-            <span id="current-balance" class="text-neutral-600 font-medium">0 BDT</span>
+            <span id="current-balance" class="text-neutral-600 font-medium" data-amount>0</span>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
               <div class="right">
                 <div class="donated-amount">
                   <img src="./assets/coin.png" alt="coin" />
-                  <span>0 BDT</span>
+                  <span data-amount>0</span>
                 </div>
                 <h2>Donate for Flood Relief at Noakhali, Bangladesh</h2>
                 <p>
@@ -76,7 +76,7 @@
               <div class="right">
                 <div class="donated-amount">
                   <img class="w-6" src="./assets/coin.png" alt="coin" />
-                  <span>0 BDT</span>
+                  <span data-amount>0</span>
                 </div>
                 <h2>Donate for Flood Releif at Feni, Bangladesh</h2>
                 <p>
@@ -94,7 +94,7 @@
               <div class="flex flex-col">
                 <div class="donated-amount">
                   <img class="w-6" src="./assets/coin.png" alt="coin" />
-                  <span>0 BDT</span>
+                  <span data-amount>0</span>
                 </div>
                 <h2>Aid for Injured in Qouta Movement</h2>
                 <p>

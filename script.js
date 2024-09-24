@@ -3,7 +3,7 @@ const donationHistory = [];
 
 // set initial amount
 const currentBalanceElement = document.getElementById("current-balance");
-currentBalanceElement.innerHTML = getBDT(balanceAmount);
+currentBalanceElement.innerHTML = balanceAmount;
 const dialogElement = document.getElementById("dialog");
 dialogElement.querySelector("button").addEventListener("click", () => dialogElement.setAttribute("hidden", true));
 
@@ -13,10 +13,12 @@ const tabContentElements = document.querySelectorAll("#tab-contents > div");
 let activeTabIndex = 0;
 
 function updateCurrentTab() {
-  tabButtonElements.forEach((btn, i) => i != activeTabIndex && btn.classList.remove("primary"));
-  tabContentElements.forEach((cnt, i) => i != activeTabIndex && cnt.classList.add("hidden"));
-  tabButtonElements[activeTabIndex].classList.add("primary");
-  tabContentElements[activeTabIndex].classList.remove("hidden");
+  tabButtonElements.forEach((btn, i) =>
+    i != activeTabIndex ? btn.classList.remove("primary") : btn.classList.add("primary")
+  );
+  tabContentElements.forEach((cnt, i) =>
+    i != activeTabIndex ? cnt.classList.add("hidden") : cnt.classList.remove("hidden")
+  );
 }
 
 updateCurrentTab();
@@ -35,13 +37,13 @@ const donateButtonElements = donationTabElement.querySelectorAll("button");
 
 function deductFromBalance(amount) {
   balanceAmount -= amount;
-  currentBalanceElement.innerHTML = getBDT(balanceAmount);
+  currentBalanceElement.innerHTML = balanceAmount;
 }
 
 function addDonatedAmount(amount, index) {
   const spanElement = donationElements[index].querySelector(".donated-amount span");
-  const prevAmount = parseFloat(spanElement.innerText.split(" ")[0]);
-  spanElement.innerHTML = `${prevAmount + amount} BDT`;
+  const prevAmount = parseFloat(spanElement.innerText);
+  spanElement.innerHTML = prevAmount + amount;
 }
 
 donateButtonElements.forEach((btn, buttonIndex) =>
@@ -59,7 +61,7 @@ donateButtonElements.forEach((btn, buttonIndex) =>
     donationHistory.push({ amount, donatingTo, date: new Date().toLocaleString() });
     updateHistory();
 
-    dialogElement.querySelector(".content > div > span").innerHTML = getBDT(amount);
+    dialogElement.querySelector(".content > div > span").innerHTML = amount;
     dialogElement.removeAttribute("hidden");
   })
 );
@@ -86,9 +88,4 @@ function isValidDonationAmount(amount) {
   else if (isNaN(amount) || amount == "0" || amount.startsWith("-")) alert("Enter a valid amount.");
   else if (amount > balanceAmount) alert("Insufficient balance.");
   else return true;
-}
-
-
-function getBDT(amount) {
-  return `&#2547; ${amount}`;
 }

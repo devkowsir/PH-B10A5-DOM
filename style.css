@@ -474,6 +474,18 @@ button.primary {
   background-color: rgb(190 242 100 / var(--tw-bg-opacity));
 }
 
+[data-amount]::before {
+  padding-right: 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(82 82 82 / var(--tw-text-opacity));
+  --tw-content: "\09F3";
+  content: var(--tw-content);
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1033,6 +1045,10 @@ button.primary {
   padding-bottom: 2rem;
 }
 
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -1095,6 +1111,17 @@ button.primary {
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
+.content-\[\"\\09F3\"\] {
+  --tw-content: "\09F3";
+  content: var(--tw-content);
+}
+
+.before\:text-3xl::before {
+  content: var(--tw-content);
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 @media (min-width: 640px) {
   .sm\:w-10 {
     width: 2.5rem;
@@ -1103,6 +1130,10 @@ button.primary {
   .sm\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
   }
 
   .sm\:px-7 {

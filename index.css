@@ -10,6 +10,10 @@
   button.primary {
     @apply bg-lime-300 border-none;
   }
+
+  [data-amount]::before {
+    @apply pr-1 content-["\09F3"] text-xl text-neutral-600 font-bold leading-none;
+  }
 }
 
 @layer components {
