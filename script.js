@@ -3,7 +3,7 @@ const donationHistory = [];
 
 // set initial amount
 const currentBalanceElement = document.getElementById("current-balance");
-currentBalanceElement.innerText = `${balanceAmount} BDT`;
+currentBalanceElement.innerText = getBDT(balanceAmount);
 const dialogElement = document.getElementById("dialog");
 dialogElement.querySelector("button").addEventListener("click", () => dialogElement.setAttribute("hidden", true));
 
@@ -35,7 +35,7 @@ const donateButtonElements = donationTabElement.querySelectorAll("button");
 
 function deductFromBalance(amount) {
   balanceAmount -= amount;
-  currentBalanceElement.innerText = `${balanceAmount} BDT`;
+  currentBalanceElement.innerText = getBDT(balanceAmount);
 }
 
 function addDonatedAmount(amount, index) {
@@ -59,7 +59,7 @@ donateButtonElements.forEach((btn, buttonIndex) =>
     donationHistory.push({ amount, donatingTo, date: new Date().toLocaleString() });
     updateHistory();
 
-    dialogElement.querySelector(".content > div > span").innerText = `${amount} BDT`;
+    dialogElement.querySelector(".content > div > span").innerText = getBDT(amount);
     dialogElement.removeAttribute("hidden");
   })
 );
@@ -86,4 +86,9 @@ function isValidDonationAmount(amount) {
   else if (isNaN(amount) || amount == "0" || amount.startsWith("-")) alert("Enter a valid amount.");
   else if (amount > balanceAmount) alert("Insufficient balance.");
   else return true;
+}
+
+
+function getBDT(amount) {
+  return `&#x09F3; ${amount}`;
 }
